@@ -9,9 +9,12 @@ $(document).ready(function(){
        console.log(url);
        $.getJSON(url, function(data){
            console.log(data);
-           var info= data.response.venues.name
-           alert(info);
-           
-          
+           var info= data.response.venues;
+           for( var i=0; i < info.length; i++){
+               console.log(info[i]);
+               $("#results").append("<p>" + info[i] "</p>");
+           }
+       
+       })
     })
 })
