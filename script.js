@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $("#clear").click(function(){
+        $("#results").empty();
+    });
     $("#search").click(function(){
        var searchVal1 = $("#location").val();
        var searchVal2 = $("#food").val();
@@ -13,7 +16,7 @@ $(document).ready(function(){
            for( var i=0; i < info.length; i++){
                var venue= info[i]
                console.log(info[i]);
-               $("#results").append("<p>" + venue.name + "<br>" + venue.contact.phone + "<br>" + venue.location.address + "</p>");
+               $("#results").append("<p>" + venue.name + "<br>" + "Contact: " + venue.contact.phone + "<br>" + "Address: " + venue.location.address + " " + venue.location.crossStreet + "</p>");
            }
        
        })
