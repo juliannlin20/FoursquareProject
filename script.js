@@ -11,8 +11,9 @@ $(document).ready(function(){
            console.log(data);
            var info= data.response.venues;
            for( var i=0; i < info.length; i++){
+               var venue= info[i]
                console.log(info[i]);
-               $("#results").append("<p>" + info[i] "</p>");
+               $("#results").append("<p>" + venue.name + "<br>" + venue.contact.phone + "<br>" + venue.location.address + "</p>");
            }
        
        })
